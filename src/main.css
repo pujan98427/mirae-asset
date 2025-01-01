@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "SpoqaHanSans";
+  src: url("./fonts/SpoqaHanSansRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpoqaHanSans";
+  src: url("./fonts/SpoqaHanSansBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-size: var(--rem) px;
+}
+body {
+  @apply font-normal leading-[1.56];
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.container-1536 {
+  width: min(calc(100% - 16px), 1536px);
+}
+:is(h1, h2, h3, h4, h5, h6) {
+  @apply font-bold;
+  font-family: "SpoqaHanSans";
+}
+button,
+a {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* avenue */
+.avanue {
+  padding: 20px 0;
+}
+
+.avanue .splide__slide .slider-container {
+  transition: transform 800ms;
+  transform: scaleY(0.8);
+  transform-origin: center center;
+}
+
+.avanue .splide__slide.is-active .slider-container {
+  transform: scale(1);
+}
+.avanue .splide__slide.is-active .line::before {
+  width: 100% !important;
+  transition-duration: 8000ms;
+}
+.avanue .splide__slide:not(.is-active) {
+  font-size: 1.25rem;
+}
+.avenue-header:after,
+.avenue-header:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+
+  z-index: -1;
+  width: 640px;
+  height: 48px;
+  background-image: url("./images/avenue-header-line.png");
+}
+.avenue-header:before {
+  left: calc(100% + 40px);
+  transform: translateY(-50%);
+}
+.avenue-header:after {
+  right: calc(100% + 40px);
+  transform: translateY(-50%) rotateY(180deg);
+}
+.banner .splide__slide.is-active .line::before {
+  width: 100% !important;
+  transition-duration: 8000ms;
+}
+.splide .splide__pagination {
+  bottom: 80px;
+}
+.banner.splide:not(.is-overflow) .splide__pagination {
+  display: flex;
+}
+.splide .splide__pagination .splide__pagination__page {
+  width: 30px;
+  height: 3px;
+  border-radius: 0;
+}
+.splide__pagination__page.is-active {
+  transform: scale(1) !important;
+}
+.translate-x-0 {
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scrollSticky.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
