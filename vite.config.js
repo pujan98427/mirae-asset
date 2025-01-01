@@ -3,9 +3,26 @@ import { resolve } from "path";
 import viteImagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
+  base: "./",
   build: {
     rollupOptions: {
-      input: resolve(__dirname, "index.html"),
+      input: {
+        main: resolve(__dirname, "index.html"),
+        about: resolve(__dirname, "about.html"),
+      },
+      output: {
+        entryFileNames: "assets/js/[name].js",
+        chunkFileNames: "assets/js/[name].js",
+        assetFileNames: ({ name }) => {
+          if (/\.(css)$/.test(name ?? "")) {
+            return "assets/css/[name][extname]";
+          }
+          if (/\.(png|jpe?g|gif|svg|webp)$/.test(name ?? "")) {
+            return "assets/images/[name][extname]";
+          }
+          return "assets/[name][extname]";
+        },
+      },
     },
     outDir: "dist",
     assetsDir: "assets",
