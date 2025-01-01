@@ -5,6 +5,8 @@ import viteImagemin from "vite-plugin-imagemin";
 export default defineConfig({
   base: "./",
   build: {
+    outDir: "dist",
+    emptyOutDir: true, // Clean the output directory before building
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
@@ -24,9 +26,6 @@ export default defineConfig({
         },
       },
     },
-    outDir: "dist",
-    assetsDir: "assets",
-    minify: "esbuild",
   },
   plugins: [
     viteImagemin({
