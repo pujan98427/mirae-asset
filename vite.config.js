@@ -1,15 +1,15 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import viteImagemin from 'vite-plugin-imagemin';
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import viteImagemin from "vite-plugin-imagemin";
 
 export default defineConfig({
   build: {
     rollupOptions: {
-      input: resolve(__dirname, 'index.html'),
+      input: resolve(__dirname, "index.html"),
     },
-    outDir: 'dist',
-    assetsDir: 'assets',
-    minify: 'esbuild',
+    outDir: "dist",
+    assetsDir: "assets",
+    minify: "esbuild",
   },
   plugins: [
     viteImagemin({
@@ -26,11 +26,11 @@ export default defineConfig({
       svgo: {
         plugins: [
           {
-            name: 'removeViewBox',
+            name: "removeViewBox",
             active: false,
           },
           {
-            name: 'removeEmptyAttrs',
+            name: "removeEmptyAttrs",
             active: false,
           },
         ],
