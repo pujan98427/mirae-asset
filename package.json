@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A test project ",
   "main": "index.html",
+  "about": "about.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

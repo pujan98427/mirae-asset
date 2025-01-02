@@ -9,8 +9,8 @@ export default defineConfig({
     emptyOutDir: true, // Clean the output directory before building
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
-        about: resolve(__dirname, "about.html"),
+        main: resolve(__dirname, "/index.html"),
+        about: resolve(__dirname, "/about.html"),
       },
       output: {
         entryFileNames: "assets/js/[name].js",

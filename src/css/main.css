@@ -23,7 +23,9 @@ body {
 @tailwind components;
 @tailwind utilities;
 .container-1536 {
-  width: min(calc(100% - 16px), 1536px);
+  @apply w-[min(calc(100%_-_16px),_1280px)] 2xl:w-[min(calc(100%_-_16px),_1536px)];
+}
+@media (min-width: 768px) {
 }
 :is(h1, h2, h3, h4, h5, h6) {
   @apply font-bold;
